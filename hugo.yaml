@@ -1,8 +1,7 @@
 baseurl: "https://siba"
-title: "My Blog"
+title: "Sergei Bozhko Blog"
 languageCode: "en-us"
 theme: "PaperMod"
-paginate: 10
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -11,8 +10,8 @@ buildExpired: false
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: ExampleSite
-  description: "ExampleSite description"
+  title: SergeiBozhko
+  description: "Sergei Bozhko Blog"
   keywords: [Blog, Portfolio, PaperMod]
   author: Me
   # author: ["Me", "You"] # multiple authors
@@ -61,12 +60,12 @@ params:
     imageHeight: 120
     imageTitle: my image
     buttons:
-      - name: About
-        url: about
-      - name: Posts
-        url: posts
-      - name: Tags
-        url: tags
+      # - name: About
+      # url: about
+      # - name: Articles
+      #   url: posts
+      # - name: Topics
+      #   url: topics
 
   # home-info mode
   homeInfoParams:
@@ -77,9 +76,9 @@ params:
     - name: email
       url: mailto:sergeibozhko.dev@gmail.com
     - name: linkedin
-      url: "https://x.com/"
+      url: "https://linkedin.com/in/sergeibozhko/"
     - name: github
-      url: "https://github.com/"
+      url: "https://github.com/sbazhko"
 
   analytics:
     google:
@@ -113,24 +112,20 @@ params:
 menu:
   main:
     - identifier: categories
-      name: categories
+      name: Articles
       url: /categories/
       weight: 10
     - identifier: tags
-      name: tags
+      name: Tags
       url: /tags/
       weight: 20
-    - identifier: example
-      name: example.org
-      url: https://example.org
-      weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
   highlight:
     noClasses: false
-    # anchorLineNos: true
-    # codeFences: true
-    # guessSyntax: true
-    # lineNos: true
+    anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
     # style: monokai
