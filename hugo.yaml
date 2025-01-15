@@ -1,9 +1,9 @@
 baseurl: "https://siba"
-title: "Sergei Bozhko Blog"
+title: "Sergei Bozhko"
 languageCode: "en-us"
 theme: "PaperMod"
 
-enableRobotsTXT: true
+enableRobotsTXT: false
 buildDrafts: false
 buildFuture: false
 buildExpired: false
@@ -21,7 +21,7 @@ params:
   disableThemeToggle: false
 
   ShowReadingTime: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: false
@@ -33,16 +33,16 @@ params:
   comments: false
   hidemeta: false
   hideSummary: false
-  showtoc: false
+  showtoc: true
   tocopen: false
 
   assets:
     # disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
-    favicon: "<link / abs url>"
-    favicon16x16: "<link / abs url>"
-    favicon32x32: "<link / abs url>"
-    apple_touch_icon: "<link / abs url>"
+    favicon: "./images/win.jpg"
+    favicon16x16: "images/win.jpg"
+    favicon32x32: "images/win.jpg"
+    apple_touch_icon: "./images/apple-touch-icon.png"
     safari_pinned_tab: "<link / abs url>"
 
   label:
@@ -52,7 +52,7 @@ params:
 
   # profile-mode
   profileMode:
-    enabled: true # needs to be explicitly set
+    enabled: false # needs to be explicitly set
     title: Sergei Bozhko
     subtitle: "Senior Software Engineer | 6+ years of experience | AWS Certified"
     imageUrl: "images/bober.jpg"
@@ -69,8 +69,9 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Hi there \U0001F44B"
-    Content: Welcome to my blog
+    Title: "Sergei Bozhko 🚀"
+    Subtitle: "Senior Software Engineer | 6+ years of experience | AWS Certified"
+    Content: Welcome to my blog! Here, my findings, insights, and tutorials drawn from over six years of experience in software engineering. Whether you're a seasoned developer, an aspiring engineer, or simply curious about the tech world, you'll find something valuable here.
 
   socialIcons:
     - name: email
@@ -92,11 +93,7 @@ params:
     hidden: false # hide everywhere but not in structured data
     hiddenInList: false # hide on list pages and home
     hiddenInSingle: false # hide on single page
-
-  editPost:
-    URL: "https://github.com/<path_to_repo>/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+    responsiveImages: true
 
   # for search
   # https://fusejs.io/api/options.html
@@ -115,10 +112,14 @@ menu:
       name: Articles
       url: /categories/
       weight: 10
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 20
     - identifier: tags
       name: Tags
       url: /tags/
-      weight: 20
+      weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:

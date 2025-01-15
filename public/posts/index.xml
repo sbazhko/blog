@@ -1,28 +1,31 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Posts on Hello Friend NG</title>
-        <link>//localhost:1313/posts/</link>
-        <description>Recent content in Posts on Hello Friend NG</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>en</language>
-        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
-        <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
-        
-        <item>
-            <title>Amazon Web Services</title>
-            <link>//localhost:1313/posts/o_o/</link>
-            <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/o_o/</guid>
-            <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Москоу сити силикон мы ебем моделей
-&lt;img src=&#34;//localhost:1313/images/bober.jpg&#34; alt=&#34;alt&#34;&gt;&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
-<p>Москоу сити силикон мы ебем моделей
-<img src="/images/bober.jpg" alt="alt"></p>
-]]></content>
-        </item>
-        
-    </channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Sergei Bozhko</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Sergei Bozhko</description>
+    <image>
+      <title>Sergei Bozhko</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.140.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Want to learn AWS? Start here.</title>
+      <link>http://localhost:1313/posts/post2/</link>
+      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/post2/</guid>
+      <description>Where to start with AWS cloud. The core services to master.</description>
+    </item>
+    <item>
+      <title>All You Need to Know About Caches</title>
+      <link>http://localhost:1313/posts/post1/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/post1/</guid>
+      <description>What are eviction policies? How do you pick the right caching strategy?</description>
+    </item>
+  </channel>
 </rss>

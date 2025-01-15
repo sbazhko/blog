@@ -2,6 +2,7 @@
 <article class="first-entry home-info">
     <header class="entry-header">
         <h1>{{ .Title | markdownify }}</h1>
+        <div class="entry-content">{{ .Subtitle | markdownify }}</div>
     </header>
     <div class="entry-content">
         {{ .Content | markdownify }}
