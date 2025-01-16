@@ -71,8 +71,13 @@ params:
   homeInfoParams:
     Title: "Sergei Bozhko 🚀"
     Subtitle: "Senior Software Engineer | 6+ years of experience | AWS Certified"
-    Content: Welcome to my blog! Here, my findings, insights, and tutorials drawn from over six years of experience in software engineering. Whether you're a seasoned developer, an aspiring engineer, or simply curious about the tech world, you'll find something valuable here.
-
+    Content: <i>
+      Welcome to my blog! Here, my findings, insights, and tutorials drawn from over six years of experience in software engineering. Whether you're a seasoned developer, an aspiring engineer, or simply curious about the tech world, you'll find something valuable here.
+      <br/>
+      Backend Engineer with 6+ years of experience in creating scalable distributed systems for hundreds of thousands of users.
+      Worked on large-scale products within stream-aligned and infrastructure teams. Lead the development of features e2e, from collecting product requirements to establishing CI/CD, and building infrastructure.
+      Expert in Go, TypeScript, and a certified AWS Solutions Architect. Writing tech blog with articles on various topics. Read my full CV here.
+      </i>
   socialIcons:
     - name: email
       url: mailto:sergeibozhko.dev@gmail.com
@@ -89,11 +94,11 @@ params:
     yandex:
       SiteVerificationTag: "XYZabc"
 
-  cover:
-    hidden: false # hide everywhere but not in structured data
-    hiddenInList: false # hide on list pages and home
-    hiddenInSingle: false # hide on single page
-    responsiveImages: true
+  # cover:
+  #   hidden: false # hide everywhere but not in structured data
+  #   hiddenInList: false # hide on list pages and home
+  #   hiddenInSingle: false # hide on single page
+  #   responsiveImages: true
 
   # for search
   # https://fusejs.io/api/options.html
@@ -123,10 +128,9 @@ menu:
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
+  goldmark:
+    renderer:
+      unsafe: true
   highlight:
     noClasses: false
-    anchorLineNos: true
-    codeFences: true
-    guessSyntax: true
-    lineNos: true
     # style: monokai

@@ -5,7 +5,7 @@ aliases: ["caches"]
 author: ["Level: Easy"]
 summary: "What are eviction policies? How do you pick the right caching strategy?"
 cover:
-    image: "awscover.png"
+    image: "images/cachescover.png"
     alt: "caches"
 ---
 

@@ -5,7 +5,7 @@ aliases: ["caches"]
 author: ["Level: Easy"]
 summary: "Where to start with AWS cloud. The core services to master."
 cover:
-    image: "awscover.png"
+    image: "images/awscover.png"
     alt: "aws"
 ---
 
