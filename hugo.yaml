@@ -55,7 +55,7 @@ params:
     enabled: false # needs to be explicitly set
     title: Sergei Bozhko
     subtitle: "Senior Software Engineer | 6+ years of experience | AWS Certified"
-    imageUrl: "images/bober.jpg"
+    imageUrl: "images/profile.jpeg"
     imageWidth: 120
     imageHeight: 120
     imageTitle: my image

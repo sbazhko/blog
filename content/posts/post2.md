@@ -25,16 +25,13 @@ Business has different problems to solve like selling the customers solutions to
 
 Now, let's take a step toward understanding how this translates into the cloud. When working in the cloud, and particularly with AWS, what you interact with as a software engineer is typically a web-based control panel, cli in your terminal or your manage your services in declarative language like Terraform, which are essentially all do the same thing. Let’s focus on the web-based interface for simplicity. When you just start, you create your root account, sign in, and see something like this:
 
-![image.png](Want%20to%20learn%20AWS%20Start%20here%20c3248ee9315c45fabec9dc307efd1907/image.png)
+![awsconsole.png](images/awsconsole.png)
 
 There you can create, configure and manage your services.
 
 The first important concept that any cloud, and AWS in particular introduces are **regions and availability zones**. So if we decompose each AWS service to a very primitive hardware component you will end up with:
 
 - Servers
-    
-    ![image.png](Want%20to%20learn%20AWS%20Start%20here%20c3248ee9315c45fabec9dc307efd1907/image%201.png)
-    
 - Switches
 - Routers
 
@@ -77,8 +74,6 @@ So, EC2.
 You have a computer right. It has some OS,  and a hardware: e.g., CPU, that executes your code. It has a main memory, a network card, a hard drive or SSD. All of this you can buy and combine in many ways to get the PC configuration you want. 
 
 EC2 allows you to do very same except that hardware is not under or on your table, but somewhere hundreds or thousands kilometers away. Though usually you’re not the only user of that hardware, a few dosens of other OS from other AWS accounts are sharing this hardware, though note that there is an option to have a completely dedicated hardware and don’t share anything (see: Dedicated Hosts) 
-
-<TODO: need a transition, a demo, explaining the basic config and VM states>
 
 So what is actually happening is that some orchestrator (called Hypervisor) manages your Guest OS, makes sure all are given their quant of time to be executed and progress, and implements isolation, so that nobody from other AWS account can access your memory addresses.
 
