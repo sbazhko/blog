@@ -13,7 +13,7 @@ cover:
 
 In today’s world of web development, cloud knowledge has become a must-have skill. Whether you’re a frontend developer, backend engineer, or infrastructure specialist, understanding the cloud toolbox can significantly enhance your end-to-end vision. It allows you to design features with a broader perspective, weigh trade-offs, and make informed decisions that bring value to the business.
 
-When I first started learning AWS, I felt overwhelmed by the sheer number of services it offers. I struggled to understand how they all fit together, how to connect them, and how to choose the right service for a given solution.
+When I first started learning AWS, I felt overwhelmed by the number of services it offers. I struggled to understand how they all fit together, how to connect them, and how to choose the right service for a given solution.
 
 This guide aims to give you an overview of AWS services. My goal is to help you build a mental map and provide a starting point for your AWS journey. If you already have experience in software development, by the end of this article, you’ll be able to draw parallels between concepts you already know and their AWS counterparts.
 
@@ -39,7 +39,7 @@ AWS introduces key concepts to ensure resilience: regions and availability zones
 
 These components are housed in large facilities called data centers. A region is a geographical area with multiple data centers, and each region is divided into several availability zones. An AZ consists of one or more data centers connected by high-speed links, enabling rapid data synchronization.
 
-This redundancy ensures reliability. For example, if one data center is destroyed—whether by a rocket (to dramatize!) or natural disaster—the others continue functioning. However, there are trade-offs when working across regions:
+This redundancy ensures reliability. For example, if one data center is destroyed—whether by a rocket or natural disaster - the others continue functioning. However, there are trade-offs when working across regions:
 
 - Higher latency: Data transfer between distant regions is slower.
 - Increased complexity: Managing inter-region setups is challenging.
