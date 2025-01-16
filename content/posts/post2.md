@@ -11,61 +11,73 @@ cover:
 
 ## Introduction
 
-Knowledge of the cloud is a highly demanded skill nowadays in the world of web-development. Regardless what you do, front-end, backend or infrastructure, understanding of the cloud toolbox can enhance your end-to-end vision, open your third-eye to envision possible options when you design a new feature for your product and will allow you to estimate trade-offs which is very valuable for the business. 
+In today’s world of web development, cloud knowledge has become a must-have skill. Whether you’re a frontend developer, backend engineer, or infrastructure specialist, understanding the cloud toolbox can significantly enhance your end-to-end vision. It allows you to design features with a broader perspective, weigh trade-offs, and make informed decisions that bring value to the business.
 
-When I just started to learn AWS I was overwhelmed with the number of services that it offers. I was also missing how it all fit together, how all these services are connected and which one to choose as a solution.
+When I first started learning AWS, I felt overwhelmed by the sheer number of services it offers. I struggled to understand how they all fit together, how to connect them, and how to choose the right service for a given solution.
 
-In this video I will give you the overview of AWS toolbox. My intension it to help you to build some structure and understand where to start. If you already have experience with software development by the end of this video you will build some intuition and draw parallels between some theoretical concepts you already know or maybe some concrete solutions you already know and <> its counterpart(incarnation) in AWS landscape.
+This guide aims to give you an overview of AWS services. My goal is to help you build a mental map and provide a starting point for your AWS journey. If you already have experience in software development, by the end of this article, you’ll be able to draw parallels between concepts you already know and their AWS counterparts.
 
-To keep this video concise and focused, I will intentionally skip many interesting, but less relevant services. I believe by understanding foundational services I will cover you will be able to discover the rest by yourself.
+To keep things concise and focused, I’ll highlight foundational services and skip some of the more niche options. Once you understand these building blocks, exploring the rest of AWS will become much easier.
 
 ## Basics
 
-Business has different problems to solve like selling the customers solutions to storing their photos, buying items on the marketplace, paying bills in the bank or watching streams or media. To solve such problems, software systems are designed. We use many interconnected components, or "LEGO bricks," of different sizes and functions. Just like in the LEGO world where you can build a house in countless ways, the way you assemble these components can determine how secure, performant, fault-tolerant, cost-efficient and maintainable your system is.
+Businesses today solve diverse problems, from enabling customers to store photos to streaming videos or managing online marketplaces. To address these challenges, we design software systems composed of interconnected components—like LEGO bricks. The way you assemble these components determines how secure, efficient, and maintainable your system will be.
 
-Now, let's take a step toward understanding how this translates into the cloud. When working in the cloud, and particularly with AWS, what you interact with as a software engineer is typically a web-based control panel, cli in your terminal or your manage your services in declarative language like Terraform, which are essentially all do the same thing. Let’s focus on the web-based interface for simplicity. When you just start, you create your root account, sign in, and see something like this:
+In the cloud, and particularly with AWS, software engineers typically interact through a web-based console, a command-line interface (CLI), or tools like Terraform for infrastructure as code. Let’s stick to the web-based console for simplicity. When you first log in, you’ll see something like this:
 
 ![awsconsole.png](images/awsconsole.png)
 
-There you can create, configure and manage your services.
+From this interface, you can create, configure, and manage AWS services.
 
-The first important concept that any cloud, and AWS in particular introduces are **regions and availability zones**. So if we decompose each AWS service to a very primitive hardware component you will end up with:
+### Regions and Availability Zones
 
-- Servers
-- Switches
-- Routers
+AWS introduces key concepts to ensure resilience: regions and availability zones (AZs). To understand these, let’s break down AWS infrastructure into basic hardware components:
 
-So servers are packed in a rack, hundrend of racks are connected to the common network via switches, maybe a couple for redundancy, switches are connected to routers. And all of these are located in a large building called datacenter. 
+- Servers: Physical machines that store and process data.
+- Switches: Devices that connect servers within a data center.
+- Routers: Tools that direct data between networks.
 
-So when you create a service, upload your program and its data. Everything the program, the data for the program and the configuration of the service is stored in one geographical location (the region) in such data center. To solve the problem of data loss cloud providers provide redundancy, so actually not in one data center, but in multiple data centers connected with some cable that allows to synchronise copies of the data fast these separate data centers are located in so-called different availability zones. So that if the rocket destroys one DC, the other two are up and running. Most of AWS services are able to communicate only within one region, but you can freely create them in different availability zones. There are some work arounds of course (VPN, AWS RAM, VPC Hub, DynamoDB Global Table) and exceptions (CDN), but of course this comes with higher cost in all meanings — users are impacted because it is much much longer to transfer the data accross the ocean if you have your database replica in different regions. It is harder to manage such setup and thirdly it costs more money you will pay for data transfer.
+These components are housed in large facilities called data centers. A region is a geographical area with multiple data centers, and each region is divided into several availability zones. An AZ consists of one or more data centers connected by high-speed links, enabling rapid data synchronization.
 
-## Introduction to AWS Services
+This redundancy ensures reliability. For example, if one data center is destroyed—whether by a rocket (to dramatize!) or natural disaster—the others continue functioning. However, there are trade-offs when working across regions:
 
-AWS services can be divided in several categories:
+- Higher latency: Data transfer between distant regions is slower.
+- Increased complexity: Managing inter-region setups is challenging.
+- Additional cost: Transferring data across regions incurs fees.
 
-1. **Compute** **Services**. They provide processing power to run applications. These services range from traditional virtual machines to managed container services to serverless computing.
-2. **Storage Services.** These include file storage, block storage for virtual machines, and object storage.
-3. **Databases.** Services that provide managed databases, both relational and NoSQL, to handle structured and unstructured data
-4. **Decoupling Services.** : Services that enable communication between different parts of an application in a loosely-coupled manner.
-5. **Edge Services.** These services bring applications closer to end-users, reducing latency and improving user experience by caching and processing data at edge locations.
-6. **Automation Services.** Services that help automate infrastructure provisioning, deployment, and management, enabling consistent and repeatable processes.
-7. **Observability.** Services in this category help monitor, trace, and log application performance and infrastructure, aiding in the detection and resolution of issues.
-8. **Core Services.** are fundamental for securing access, managing permissions, and establishing network configurations. They are essential for setting up secure communication, ensuring data protection, and supporting seamless integration across AWS services.
+Most AWS services are region-specific, meaning they operate within a single region, though workarounds like VPNs or global tables exist for cross-region needs.
+
+# Introduction to AWS Services
+
+AWS services can be divided into several categories:
+
+1. **Compute Services**: Provide processing power to run applications, ranging from traditional virtual machines to managed container services and serverless computing.
+2. **Storage Services**: Include file storage, block storage for virtual machines, and object storage.
+3. **Databases**: Offer managed databases, both relational and NoSQL, to handle structured and unstructured data.
+4. **Decoupling Services**: Enable communication between different parts of an application in a loosely-coupled manner.
+5. **Edge Services**: Bring applications closer to end-users, reducing latency and improving user experience by caching and processing data at edge locations.
+6. **Automation Services**: Help automate infrastructure provisioning, deployment, and management, enabling consistent and repeatable processes.
+7. **Observability**: Provide tools to monitor, trace, and log application performance and infrastructure, aiding in issue detection and resolution.
+8. **Core Services**: Fundamental for securing access, managing permissions, and establishing network configurations.
+
+---
 
 ## Compute
 
 Compute services provide resources to run and execute your code. 
 
-To better illustrate the types of compute resources AWS offers, consider following analogy: Imagine you're tasked with delivering something from point A to B, and you have a few options for how to do this.
+To better illustrate the types of compute resources AWS offers, consider the following analogy:
 
-- You can **use your own car.** You have complete control over your car, so you can modify it with a faster engine, upgraded wheels, improved security features like airbags, custom navigation and whatever else. This customization allows you to do with your car everything to better complete the task, but it comes with responsibilities like maintenance, repairs, insurance, and fuel management.
-    - This is similar to using **Virtual Machines (VMs)** in AWS. You have maximum flexibility to configure your operating system, runtime environment, and software, but you must manage updates, patches, and any failures.
-- Second option, you can **use a car-sharing service.** You can choose from a variety of pre-configured cars based on your requirements. You might pick a larger car or a faster one for speed. You still have some flexibility to customize your ride (e.g., bring personal belongings, play your own music, or choose your route) and of course some maintenance like a fuel management, but you’re not responsible for most of the maintenance or insurance.
-    - This is like using **Containers**. Containers offer an isolated environment with more lightweight, efficient use of resources compared to VMs, sharing the underlying infrastructure without the need to handle its maintenance.
-- Lastly, if you don’t need anything of these, you can **use a taxi service.** In this scenario, you simply book a ride, and a driver picks you up and handles everything from navigation to maintenance. Your only job is to specify where you want to go. You don't worry about repairs, fuel, or driving—everything is managed for you.
-    - This is akin to **Serverless computing**. With serverless, you only focus on your code and logic while AWS handles infrastructure, scaling, maintenance, and uptime.
+- **Using your own car**: You have complete control over your car, allowing for customization, but you are responsible for maintenance, repairs, and fuel.
+  - Similar to **Virtual Machines (VMs)** in AWS: You configure your operating system, runtime environment, and software, but must manage updates, patches, and failures.
 
-After laying out the spectrum of existing service types, let’s dive into concrete technologies.
+- **Using a car-sharing service**: You select a pre-configured car that meets your requirements, with some flexibility to customize. Maintenance is partially managed for you.
+  - Similar to **Containers**: Offer isolated environments with efficient resource use, sharing the underlying infrastructure without full maintenance responsibility.
+
+- **Using a taxi service**: You simply book a ride, and everything else (driving, repairs, fuel) is managed for you.
+  - Similar to **Serverless computing**: Focus only on your code and logic while AWS manages infrastructure, scaling, and uptime.
+
+---
 
 ### EC2
 
@@ -143,7 +155,7 @@ When moving one step above virtual machines, we get into the world of **containe
 
 However, in production setup it is usually insufficient to run a single container. Usually you have multiple services that communicate with each other. Moreover, some services should be isolated from other groups. Also usually you need at least 1 replica of the container for redundancy if service crashes. Similarly, you would like to adapt to the incoming load by increasing the number of containers or decreasing them. You would also like to distribute load evenly accross your services, so that one service is not over or under utilized. As you can see all very much like with VMs, except that containers can usually start much faster like a program on your computer is started much faster, than booting OS and then starting the program.
 
-This is where container orchestrators come in. In standalone setups, you'd use **Docker Compose** or similar tools for local orchestration. Nowadays the most popular container orchestration tool is Kubernetes, but in this video we talk about AWS, so on AWS, what you use is either Amazon EKS or **Amazon ECS (Elastic Container Service)**. I would like to talk about the latter, because it is much faster and easier to get it running, than creating your own, even though managed kubernetes cluster.
+This is where container orchestrators come in. In standalone setups, you'd use **Docker Compose** or similar tools for local orchestration. Nowadays the most popular container orchestration tool is Kubernetes, but in this article we talk about AWS, so on AWS, what you use is either Amazon EKS or **Amazon ECS (Elastic Container Service)**. I would like to talk about the latter, because it is much faster and easier to get it running, than creating your own, even though managed kubernetes cluster.
 
 **So, ECS** is a fully managed container orchestration service that helps run, stop, and manage containers. Let’s discuss the most important components of it:
 
@@ -209,7 +221,7 @@ So, what do we have?
     - S3 Standard-Infrequent Access
     - S3 Glacier
     - S3 Glacier Deep Archive
-- I won’t provide detailed guide in this video, but just explain the intuitive difference between the teirs. Let’s take the following example. Let’s say we have S3 bucket called `photos`, say we have two folders, `current_year`  and `previous_year` and `archive`. Objects in the current folder are accessed every day. Previous year once in a month and archive once in half-year. What we could do is to keep objects we access and update very often in Standard tier. This way we pay maximum for the storage, least amount for retrieval cost. Also we can access such photos instantly. For previous year folder we can put all objects in Infrequent Access tier. We would pay less for storage and a bit more for retrieval compared to Standard tier. Access is also instant as in Standard tier. Lastly, for archived objects we can think about Glacier tier. You pay the least if you decide to store the objects there, but the retrieval cost and retrieval time is highest.
+- I won’t provide detailed guide in this article, but just explain the intuitive difference between the teirs. Let’s take the following example. Let’s say we have S3 bucket called `photos`, say we have two folders, `current_year`  and `previous_year` and `archive`. Objects in the current folder are accessed every day. Previous year once in a month and archive once in half-year. What we could do is to keep objects we access and update very often in Standard tier. This way we pay maximum for the storage, least amount for retrieval cost. Also we can access such photos instantly. For previous year folder we can put all objects in Infrequent Access tier. We would pay less for storage and a bit more for retrieval compared to Standard tier. Access is also instant as in Standard tier. Lastly, for archived objects we can think about Glacier tier. You pay the least if you decide to store the objects there, but the retrieval cost and retrieval time is highest.
 - Such rules like “please store all objects under such path in Glacier or IA tier” are implemented via **Lifecycle Policies. y**ou can define rules to transition your objects between storage classess or deleting them after some defined period of time.
 - But maybe you don’t want to care about moving objects each year between folders to move them to a proper tier. Then you might want to use S3 Intelligent Tiering which automatically moves objects between tiers depending on how frequently they are accessed. Meaning that it could move it a tier higher or lower. It has slightly higher cost to store metadata about access time of each object, but in return you are free from manual management of object tiering.
 - Speaking about security S3 has options to encrypt your objects either on the client side or at the server side. Also there are different options with regards WHO manages the key. AWS or you. If AWS - there are lot’s of advantages like automatic rotation and …
@@ -229,7 +241,7 @@ So, what do we have?
 
 ## Databases
 
-Databases are an abstraction on top of the block storage. There are different non-functional properties and ways how to structure your data with different types of the databases. I will not focus on their differences in the context of the video, but rather emphasize what AWS has to offer.
+Databases are an abstraction on top of the block storage. There are different non-functional properties and ways how to structure your data with different types of the databases. I will not focus on their differences in the context of the article, but rather emphasize what AWS has to offer.
 
 One of the most common and the oldest type is Relational Database type. AWS offers **Relational Database Service or RDS**. RDS is a fully managed relational database service. So you can create a relational database, where you can configure an EC2 instance where this database will be hosted, you can choose an engine, like
 
@@ -424,14 +436,38 @@ General recommendations:
 
 ## Conclusion
 
-- If you tell me Sergei, name the top 5 services that I must know
-- Well, the thing is, it largely depends. On what you’re working at.
-    - If that is Data Engineering or work with real time data - these are Kinesis, Firehose, S3, IAM, KMS, EMR, Flink
-    - If this is more event-driven customer facing app, than - Lambda, EventBridge, DynamoDB, S3, API GW
-    - If you say on the other end of serverless spectrum, create more like a proxy whatever, than - EC2, API GW, VPC, IAM,…
-- But if I try really hard to name top 5 services that would be useful for use in nearly any job
-    - IAM
-    - KMS
-    - Lambda
-    - S3
-    - CloudWatch Logs
+If you ask me, "Sergei, name the top 5 AWS services I must know," my answer would be: **It depends.** It depends on what you're working on. Here's how it breaks down:
+
+- **For Data Engineering or working with real-time data**:
+  - Kinesis
+  - Firehose
+  - S3
+  - IAM
+  - KMS
+  - EMR
+  - Flink
+
+- **For event-driven, customer-facing applications**:
+  - Lambda
+  - EventBridge
+  - DynamoDB
+  - S3
+  - API Gateway
+
+- **For tasks more on the server-side spectrum**:
+  - EC2
+  - API Gateway
+  - VPC
+  - IAM
+
+If I try really hard to name **top 5 services** that are universally useful across nearly any job, these would be:
+
+1. **IAM** (Identity and Access Management)
+2. **KMS** (Key Management Service)
+3. **Lambda**
+4. **S3**
+5. **CloudWatch Logs**
+
+---
+
+Hope you’ve learned something! 👋
