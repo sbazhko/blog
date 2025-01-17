@@ -30,6 +30,7 @@ params:
   comments: false
   hidemeta: false
   hideSummary: false
+  GoogleAnalyticsID: "G-4B4KMW59CV"
 
   assets:
     favicon: "/assets/favicon.ico"
@@ -65,14 +66,6 @@ params:
       url: "https://linkedin.com/in/sergeibozhko/"
     - name: github
       url: "https://github.com/sbazhko"
-
-  analytics:
-    google:
-      SiteVerificationTag: "XYZabc"
-    bing:
-      SiteVerificationTag: "XYZabc"
-    yandex:
-      SiteVerificationTag: "XYZabc"
 
   # cover:
   #   hidden: false # hide everywhere but not in structured data
