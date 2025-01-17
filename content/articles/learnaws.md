@@ -1,7 +1,7 @@
 ---
 title: "Want to learn AWS? Start here."
 date: "2024-11-15"
-aliases: ["caches"]
+aliases: ["aws"]
 author: ["Level: Easy"]
 summary: "Where to start with AWS cloud. The core services to master."
 cover:

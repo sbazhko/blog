@@ -1,4 +1,4 @@
-baseurl: "https://siba"
+baseurl: "https://www.sergeibozhko.com"
 title: "Sergei Bozhko"
 languageCode: "en-us"
 theme: "PaperMod"
@@ -9,75 +9,55 @@ buildFuture: false
 buildExpired: false
 
 params:
-  env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: SergeiBozhko
-  description: "Sergei Bozhko Blog"
-  keywords: [Blog, Portfolio, PaperMod]
-  author: Me
-  # author: ["Me", "You"] # multiple authors
-  images: ["<link or path of image for opengraph, twitter-cards>"]
+  env: production
+  author: Sergei Bozhko
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
 
   ShowReadingTime: true
-  ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
-  ShowCodeCopyButtons: false
   ShowWordCount: true
-  ShowRssButtonInSectionTermList: true
+  ShowRssButtonInSectionTermList: false
   UseHugoToc: true
+  showtoc: true
+  tocopen: false
+  ShowShareButtons: false
+  ShowCodeCopyButtons: false
   disableSpecial1stPost: false
   disableScrollToTop: false
   comments: false
   hidemeta: false
   hideSummary: false
-  showtoc: true
-  tocopen: false
 
   assets:
-    # disableHLJS: true # to disable highlight.js
-    # disableFingerprinting: true
-    favicon: "./images/win.jpg"
-    favicon16x16: "images/win.jpg"
-    favicon32x32: "images/win.jpg"
-    apple_touch_icon: "./images/apple-touch-icon.png"
-    safari_pinned_tab: "<link / abs url>"
+    favicon: "/assets/favicon.ico"
+    favicon16x16: "/assets/favicon.ico"
+    favicon32x32: "/assets/favicon.ico"
+    apple_touch_icon: "/assets/favicon.ico"
+    safari_pinned_tab: "/assets/favicon.ico"
 
   label:
     text: "Home"
-    icon: /apple-touch-icon.png
-    iconHeight: 35
 
   # profile-mode
   profileMode:
     enabled: false # needs to be explicitly set
-    title: Sergei Bozhko
+    title: "Sergei Bozhko 🚀"
     subtitle: "Senior Software Engineer | 6+ years of experience | AWS Certified"
+    content: <p align="justify">
+      <i>
+      Welcome to my blog! Here, my findings, insights, and tutorials drawn from over six years of experience in software engineering. Whether you're a seasoned developer, an aspiring engineer, or simply curious about the tech world, you'll find something valuable here.
+      </i>
+      </p>
     imageUrl: "images/profile.jpeg"
-    imageWidth: 120
-    imageHeight: 120
-    imageTitle: my image
-    buttons:
-      # - name: About
-      # url: about
-      # - name: Articles
-      #   url: posts
-      # - name: Topics
-      #   url: topics
+    imageWidth: 100
+    imageHeight: 100
 
   # home-info mode
   homeInfoParams:
     Title: "Sergei Bozhko 🚀"
-    Subtitle: "Senior Software Engineer | 6+ years of experience | AWS Certified"
-    Content: <i>
-      Welcome to my blog! Here, my findings, insights, and tutorials drawn from over six years of experience in software engineering. Whether you're a seasoned developer, an aspiring engineer, or simply curious about the tech world, you'll find something valuable here.
-      <br/>
-      Backend Engineer with 6+ years of experience in creating scalable distributed systems for hundreds of thousands of users.
-      Worked on large-scale products within stream-aligned and infrastructure teams. Lead the development of features e2e, from collecting product requirements to establishing CI/CD, and building infrastructure.
-      Expert in Go, TypeScript, and a certified AWS Solutions Architect. Writing tech blog with articles on various topics. Read my full CV here.
-      </i>
   socialIcons:
     - name: email
       url: mailto:sergeibozhko.dev@gmail.com
@@ -100,27 +80,16 @@ params:
   #   hiddenInSingle: false # hide on single page
   #   responsiveImages: true
 
-  # for search
-  # https://fusejs.io/api/options.html
-  fuseOpts:
-    isCaseSensitive: false
-    shouldSort: true
-    location: 0
-    distance: 1000
-    threshold: 0.4
-    minMatchCharLength: 0
-    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
-    keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: categories
+    - identifier: articles
       name: Articles
-      url: /categories/
+      url: /articles/
       weight: 10
-    # - identifier: about
-    #   name: About
-    #   url: /about/
-    #   weight: 20
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 20
     # - identifier: tags
     #   name: Tags
     #   url: /tags/
