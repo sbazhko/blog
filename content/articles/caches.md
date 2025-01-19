@@ -17,17 +17,19 @@ But when do you actually need a cache? What are eviction policies? How do you pi
 
 By the end of this guide, you will know how to use caches effectively and avoid common mistakes.
 
-## What is a Cache? 🤔
+## What is a Cache?
 
 A cache is a storage layer designed to keep frequently used data, reducing the need to fetch it from slower storage repeatedly.
 
 ### Example: Browser Caching 🌐
 
+![browsercaching.png](images/browsercaching.png)
+
 When you load a webpage for the first time, it may take some time, especially on a slow internet connection. However, subsequent visits are often much faster because the browser caches assets like images and scripts locally. This eliminates the need to download them again.
 
-The problem caching solves is **performance**.
+> 💡 The problem caching solves is **performance**.
 
-### Scenarios Where Caching Is Useful 💡
+### Scenarios Where Caching Is Useful
 
 1. **Complex Database Queries**: Results from JOIN operations across multiple tables can be cached to avoid re-executing time-consuming queries.
 2. **Post-Processing Tasks**: Outputs from multi-step processes can be cached to avoid redundant calculations.
@@ -42,9 +44,14 @@ Caching is not always the answer. Consider these points:
 
 - **When Not to Use Caching:**
 
-  - Your system has no performance issues.
-  - Your data changes constantly, making cache updates frequent and costly.
-  - Your data is sensitive, like passwords or financial information, where caching could pose risks.
+  - **Your system has no performance issues.**
+  For example, if you run a simple blog with a few hundred visitors per day, the database queries are already quick. In such cases, adding caching introduces unnecessary complexity without significant benefits.
+
+  - **Your data changes constantly**, making cache updates frequent and costly.
+  Consider a stock trading platform where prices update every second. Using caching in this scenario would require constant invalidation and reloading, increasing overhead and risking data inconsistencies.
+
+  - **Your data is sensitive**, like passwords or financial information, where caching could pose risks.
+  For instance, caching account balances in a banking app might expose sensitive information or lead to inaccuracies that could violate strict data handling policies.
 
 - **When to Use Caching:**
 
@@ -55,6 +62,7 @@ Caching is not always the answer. Consider these points:
 
 ### Hardware Caches 🖥️
 
+![hwcaches.png](images/hwcaches.png)
 Hardware caches are built into the CPU and are extremely fast. They store frequently accessed data close to the processor:
 
 - **L1 Cache**: Smallest and fastest, located closest to the CPU core.
