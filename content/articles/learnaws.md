@@ -5,7 +5,7 @@ aliases: ["aws"]
 author: ["Level: Easy"]
 summary: "Where to start with AWS cloud. The core services to master."
 cover:
-    image: "images/awscover.png"
+    image: "images/learn-aws/awscover.png"
     alt: "aws"
 ---
 
@@ -25,7 +25,7 @@ Businesses today solve diverse problems, from enabling customers to store photos
 
 In the cloud, and particularly with AWS, software engineers typically interact through a web-based console, a command-line interface (CLI), or tools like Terraform for infrastructure as code. Let’s stick to the web-based console for simplicity. When you first log in, you’ll see something like this:
 
-![awsconsole.png](images/awsconsole.png)
+![awsconsole.png](images/learn-aws/awsconsole.png)
 
 From this interface, you can create, configure, and manage AWS services.
 

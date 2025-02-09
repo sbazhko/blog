@@ -5,7 +5,7 @@ aliases: ["caches"]
 author: ["Level: Easy"]
 summary: "What are eviction policies? How do you pick the right caching strategy?"
 cover:
-    image: "images/cachescover.png"
+    image: "images/caches/cachescover.png"
     alt: "caches"
 ---
 
@@ -23,7 +23,7 @@ A cache is a storage layer designed to keep frequently used data, reducing the n
 
 ### Example: Browser Caching 🌐
 
-![browsercaching.png](images/browsercaching.png)
+![browsercaching.png](images/caches/browsercaching.png)
 
 When you load a webpage for the first time, it may take some time, especially on a slow internet connection. However, subsequent visits are often much faster because the browser caches assets like images and scripts locally. This eliminates the need to download them again.
 
@@ -62,7 +62,7 @@ Caching is not always the answer. Consider these points:
 
 ### Hardware Caches 🖥️
 
-![hwcaches.png](images/hwcaches.png)
+![hwcaches.png](images/caches/hwcaches.png)
 Hardware caches are built into the CPU and are extremely fast. They store frequently accessed data close to the processor:
 
 - **L1 Cache**: Smallest and fastest, located closest to the CPU core.
